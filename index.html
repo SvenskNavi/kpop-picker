@@ -5,8 +5,8 @@
 <title>Picker</title>
 <style>
 body {
-    background:#FFF;
-    color:#000;
+    background:#222;
+    color:#FFF;
     font-family:verdana, sans-serif;
     font-size:10pt;
     margin:0;
@@ -59,29 +59,6 @@ button.disabled:hover {
     overflow:hidden;
 }
 
-@media (min-width:1024px) {
-    /* Put the found favorites beside the picking div when the window is sufficiently large */
-    #picking {
-        float:left;
-        width:636px;
-    }
-
-    #secondary {
-        margin-left:646px;
-    }
-}
-
-@media (min-width:1300px) {
-    /* Once we get to the point where 636px is less than half of the width of the screen, make the picking div just take up half */
-    #picking {
-        width:50%;
-    }
-
-    #secondary {
-        margin-left:51%;
-    }
-}
-
 #pick {
     background:#58F;
     color:#FFF;
@@ -107,7 +84,7 @@ button.disabled:hover {
 }
 
 .item-list li {
-    margin:0;
+    margin:2px;
     display:inline-block;
     height:100px;
     width:100px;
@@ -122,6 +99,18 @@ button.disabled:hover {
     color:#000;
 }
 
+#picking .item-list {
+    line-height: 500px
+}
+
+#picking .item-list li {
+    margin: 10px;
+    line-height: 500px;
+    height: 500px;
+    width: 500px;
+    border: 5px solid transparent;
+}
+
 .item-list li img {
     vertical-align:middle;
     max-height:100%;
@@ -132,30 +121,6 @@ button.disabled:hover {
     display:inline-block;
     vertical-align:middle;
     line-height:1.2;
-}
-
-@media (max-width:636px) {
-    .item-list {
-        line-height:75px;
-    }
-
-    .item-list li {
-        line-height:75px;
-        height:75px;
-        width:75px;
-    }
-}
-
-@media (max-width:423px) {
-    .item-list {
-        line-height:50px;
-    }
-
-    .item-list li {
-        line-height:50px;
-        height:50px;
-        width:50px;
-    }
 }
 
 #evaluating li {
@@ -175,7 +140,7 @@ button.disabled:hover {
 }
 
 #evaluating li.selected {
-    border:3px solid #7AC;
+    border: 5px solid #7AC;
 }
 
 #evaluating, #buttons {
