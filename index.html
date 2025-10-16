@@ -181,7 +181,7 @@ button.disabled:hover {
 <ul id="evaluating" class="item-list">
 </ul>
 
-<p id="buttons"><button id="pick">Pick</button> <button id="pass">Pass</button> <button id="undo">Undo</button> <button id="redo">Redo</button></p>
+<p id="buttons"><button id="pick">Pick</button> <button id="pass">Pass</button> <button id="undo">Undo</button> <button id="redo">Redo</button> <button id="reset">Reset</button></p>
 </div>
 
 <div id="secondary">
@@ -209,7 +209,12 @@ var items = [
 ];
 
 var myPicker = new picker.Picker({
-    items: items
+    items: items,
+    localStorageKey: 'picker-state',
+    defaultSettings: {
+        minBatchSize: 2,
+        maxBatchSize: 2
+    }
 });
 
 var pickerUI = new PickerUI(myPicker, {
@@ -218,6 +223,7 @@ var pickerUI = new PickerUI(myPicker, {
         pass: "#pass",
         undo: "#undo",
         redo: "#redo",
+        reset: "#reset",
         evaluating: "#evaluating",
         favorites: "#favorites"
     }
